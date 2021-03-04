@@ -1,1 +1,57 @@
+#Taller 2 Paula Pabon
+#zip
+import os
+from zipfile import ZipFile
+direccion = 'C:\\Users\Paula\Pictures\python_books.zip'
 
+# Descomprimir el archivo ZIP
+with ZipFile(direccion) as archivo:
+    archivo.extractall("C:\\Users\Paula\Pictures")
+import shutil
+shutil.rmtree('C:\\Users\Paula\Pictures\__MACOSX')
+for archivo in os.walk("C:\\Users\Paula\Pictures\python_books\"):
+    print(archivo)
+    for raiz, dirs, archivos in os.walk("C:\\Users\Paula\Pictures\astrok"):
+    # print(raiz, dirs, archivos)
+    for a in archivos: 
+        print(a)
+        
+import fitz
+documento1 = fitz.open('C:\\Users\Paula\Pictures\python_books\Python - AWS.pdf')
+print("Número de páginas: ", documento1.pageCount)
+print("Metados: ", documento1.metadata)
+pagina = documento1.loadPage(0)
+texto1 = pagina.getText("text")
+print(texto1)
+
+documento2 = fitz.open('C:\\Users\Paula\Pictures\python_books\Python  Data Science Cookbook.pdf')
+print("Número de páginas: ", documento2.pageCount)
+print("Metados: ", documento2.metadata)
+pagina = documento2.loadPage(0)
+texto2 = pagina.getText("text")
+print(texto2)
+
+documento3 = fitz.open('C:\\Users\Paula\Pictures\python_books\Python - Finance.pdf')
+print("Número de páginas: ", documento3.pageCount)
+print("Metados: ", documento3.metadata)
+pagina = documento3.loadPage(0)
+texto3 = pagina.getText("text")
+print(texto3)
+
+
+words = texto1.split()
+num_words = len( words )
+print("El archivo Python - AWS.pdf contiene " + str( num_words) + " palabras")
+
+
+
+words = texto2.split()
+num_words = len( words )
+print("El archivo Python  Data Science Cookbook contiene " + str( num_words) + " palabras")
+
+
+words = texto3.split()
+num_words = len( words )
+print("El archivo Python - Finance.pdf contiene " + str( num_words) + " palabras")
+
+#El archivo con mayor numero de palabras es el N° 3
