@@ -17,6 +17,7 @@ for archivo in os.walk("C:\\Users\Paula\Pictures\python_books\"):
         print(a)
         
 import fitz
+
 documento1 = fitz.open('C:\\Users\Paula\Pictures\python_books\Python - AWS.pdf')
 print("Número de páginas: ", documento1.pageCount)
 print("Metados: ", documento1.metadata)
@@ -42,16 +43,19 @@ print(texto3)
 words = texto1.split()
 num_words = len( words )
 print("El archivo Python - AWS.pdf contiene " + str( num_words) + " palabras")
-
+El archivo Python - AWS.pdf contiene 254 palabras
 
 
 words = texto2.split()
 num_words = len( words )
 print("El archivo Python  Data Science Cookbook contiene " + str( num_words) + " palabras")
+El archivo Python  Data Science Cookbook contiene 535 palabras
 
 
 words = texto3.split()
 num_words = len( words )
 print("El archivo Python - Finance.pdf contiene " + str( num_words) + " palabras")
+El archivo Python - Finance.pdf contiene 226 palabras
 
-#El archivo con mayor numero de palabras es el N° 3
+
+#El archivo con mayor numero de palabras es el N° 2 Data Science Cookbook 
